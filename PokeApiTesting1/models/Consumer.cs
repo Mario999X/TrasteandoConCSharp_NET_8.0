@@ -44,7 +44,6 @@ namespace Testing1.models
 
                 if (response is not null) // Here is saved to the cache
                 {
-                    response.dateRegistered = DateTime.UtcNow;
                     pokemons.Add(response);
                     Console.WriteLine(response);
                 }
@@ -89,9 +88,9 @@ namespace Testing1.models
             Console.WriteLine("Cache cleared.");
         }
 
-        public void OrderByDate()
+        public void OrderByAlph()
         {
-            foreach (var p in pokemons.OrderBy(x => x.dateRegistered))
+            foreach (var p in pokemons.OrderByDescending(x => x.Name))
             {
                 Console.WriteLine(p.ToString());
             }
@@ -120,8 +119,7 @@ namespace Testing1.models
                             true,
                             2
                         )
-                    },
-                    DateTime.UtcNow.AddSeconds(-5)
+                    }
                 ),
                 new Pokemon
                 (
@@ -141,15 +139,19 @@ namespace Testing1.models
                             true,
                             2
                         )
-                    },
-                    DateTime.UtcNow
+                    }
                 ),
                 new Pokemon
                 (
                     "Deoxys",
                     "250",
-                    null,
-                    DateTime.UtcNow.AddDays(-1)
+                    null
+                ),
+                new Pokemon
+                (
+                    "Charizard",
+                    "200",
+                    null
                 ),
             });
         }

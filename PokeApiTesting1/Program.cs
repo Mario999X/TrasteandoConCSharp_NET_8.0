@@ -22,7 +22,7 @@ namespace Testing1
                 Console.WriteLine("\nSelect an option: " +
                     "\n1.Search for a pokemon." +
                     "\n2.Show all pokemon saved in cache" +
-                    "\n3.Show all pokemon saved in cache, order by date registered" +
+                    "\n3.Show all pokemon saved in cache, order alphabetically" +
                     "\n4.Delete pokemon in cache" +
                     "\n5.Reset cache" +
                     "\n6.Exit app" +
@@ -46,7 +46,7 @@ namespace Testing1
                         break;
                     case 3:
                         {
-                            consumer.OrderByDate();
+                            consumer.OrderByAlph();
                         }
                         break;
                     case 4:
