@@ -8,7 +8,7 @@ namespace Testing1
         
         private static async Task Main()
         {
-            consumer.InsertDataForTesting();
+            //consumer.InsertDataForTesting();
             await InitialMenu();
         }
 
@@ -28,7 +28,7 @@ namespace Testing1
                     "\n6.Exit app" +
                     "\n7.Clear terminal\n");
 
-                var readKey = Console.ReadKey(true).KeyChar.ToString();
+                var readKey = Console.ReadLine() ?? "";
 
                 _ = int.TryParse(readKey, out int optionSelected);
 

@@ -104,7 +104,7 @@ namespace Testing1.models
                 new Pokemon
                 (
                     "Pikachu",
-                    "20",
+                    20,
                     new List<Abilities>
                     {
                         new Abilities
@@ -124,7 +124,7 @@ namespace Testing1.models
                 new Pokemon
                 (
                     "Serperior",
-                    "150",
+                    150,
                     new List<Abilities>
                     {
                         new Abilities
@@ -144,13 +144,13 @@ namespace Testing1.models
                 new Pokemon
                 (
                     "Deoxys",
-                    "250",
+                    250,
                     null
                 ),
                 new Pokemon
                 (
                     "Charizard",
-                    "200",
+                    200,
                     null
                 ),
             });

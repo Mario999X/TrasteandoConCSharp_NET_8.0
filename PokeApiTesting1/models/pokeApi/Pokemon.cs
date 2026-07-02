@@ -7,14 +7,14 @@ namespace Testing1.models.pokeApi
         [JsonPropertyName("name")]
         public string Name { get; set; }
         [JsonPropertyName("base_experience")]
-        public string BaseExperience { get; set; }
+        public int BaseExperience { get; set; }
         [JsonPropertyName("abilities")]
         public List<Abilities> Abilities { get; set; }
 
         [JsonConstructor]
         public Pokemon() { }
 
-        public Pokemon(string name, string baseExperience, List<Abilities>? abilities)
+        public Pokemon(string name, int baseExperience, List<Abilities>? abilities)
         {
             Name = name;
             BaseExperience = baseExperience;
