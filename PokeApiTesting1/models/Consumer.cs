@@ -75,6 +75,7 @@ namespace Testing1.models
             if(p is not null)
             {
                 pokemons.Remove(p);
+                Console.WriteLine($"{name} deleted");
             }
             else
             {
