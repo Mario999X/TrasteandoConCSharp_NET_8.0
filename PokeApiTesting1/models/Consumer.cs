@@ -135,21 +135,7 @@ namespace Testing1.models
                 (
                     "Deoxys",
                     "250",
-                    new List<Abilities>
-                    {
-                        new Abilities
-                        (
-                            new Ability("Forma ataque"),
-                            false,
-                            1
-                        ),
-                        new Abilities
-                        (
-                            new Ability("Forma defensa"),
-                            false,
-                            2
-                        )
-                    }
+                    null
                 ),
             });
         }

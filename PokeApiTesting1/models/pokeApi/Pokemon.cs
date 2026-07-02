@@ -14,7 +14,7 @@ namespace Testing1.models.pokeApi
         [JsonConstructor]
         public Pokemon() { }
 
-        public Pokemon(string name, string baseExperience, List<Abilities> abilities)
+        public Pokemon(string name, string baseExperience, List<Abilities>? abilities)
         {
             Name = name;
             BaseExperience = baseExperience;
@@ -34,7 +34,11 @@ namespace Testing1.models.pokeApi
                     tostring += $"   {item}\n";
                 }
             }
-            tostring += "]\n-----";
+            else
+            {
+                tostring += "No tiene habilidades\n";
+            }
+                tostring += "]\n-----";
             return tostring;
         }
     }
