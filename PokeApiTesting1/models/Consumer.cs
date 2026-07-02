@@ -42,8 +42,10 @@ namespace Testing1.models
                     return;
                 }
 
-                if (response is not null) // Already found in cache
+                if (response is not null) // Here is saved to the cache
                 {
+                    response.dateRegistered = DateTime.UtcNow;
+                    pokemons.Add(response);
                     Console.WriteLine(response);
                 }
                 else
@@ -86,7 +88,15 @@ namespace Testing1.models
             Console.WriteLine("Cache cleared.");
         }
 
-        // Datos de prueba por estar la API bloqueada.
+        public void OrderByDate()
+        {
+            foreach (var p in pokemons.OrderBy(x => x.dateRegistered))
+            {
+                Console.WriteLine(p.ToString());
+            }
+        }
+
+        // Data for testing
         public void InsertDataForTesting()
         {
             pokemons.UnionWith(new[]
@@ -109,7 +119,8 @@ namespace Testing1.models
                             true,
                             2
                         )
-                    }
+                    },
+                    DateTime.UtcNow.AddSeconds(-5)
                 ),
                 new Pokemon
                 (
@@ -129,13 +140,15 @@ namespace Testing1.models
                             true,
                             2
                         )
-                    }
+                    },
+                    DateTime.UtcNow
                 ),
                 new Pokemon
                 (
                     "Deoxys",
                     "250",
-                    null
+                    null,
+                    DateTime.UtcNow.AddDays(-1)
                 ),
             });
         }

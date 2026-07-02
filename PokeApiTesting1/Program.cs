@@ -22,10 +22,11 @@ namespace Testing1
                 Console.WriteLine("\nSelect an option: " +
                     "\n1.Search for a pokemon." +
                     "\n2.Show all pokemon saved in cache" +
-                    "\n3.Delete pokemon in cache" +
-                    "\n4.Reset cache" +
-                    "\n5.Exit app" +
-                    "\n6.Clear terminal\n");
+                    "\n3.Show all pokemon saved in cache, order by date registered" +
+                    "\n4.Delete pokemon in cache" +
+                    "\n5.Reset cache" +
+                    "\n6.Exit app" +
+                    "\n7.Clear terminal\n");
 
                 var readKey = Console.ReadKey(true).KeyChar.ToString();
 
@@ -45,20 +46,25 @@ namespace Testing1
                         break;
                     case 3:
                         {
-                            consumer.DeleteCachedPokemon(ReadPokemonNameKeyboard());
+                            consumer.OrderByDate();
                         }
                         break;
                     case 4:
                         {
-                            consumer.ResetCache();
+                            consumer.DeleteCachedPokemon(ReadPokemonNameKeyboard());
                         }
                         break;
                     case 5:
                         {
-                            exit = true;
+                            consumer.ResetCache();
                         }
                         break;
                     case 6:
+                        {
+                            exit = true;
+                        }
+                        break;
+                    case 7:
                         {
                             Console.Clear();
                         }

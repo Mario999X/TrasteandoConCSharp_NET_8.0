@@ -10,15 +10,17 @@ namespace Testing1.models.pokeApi
         public string BaseExperience { get; set; }
         [JsonPropertyName("abilities")]
         public List<Abilities> Abilities { get; set; }
+        public DateTime dateRegistered { get; set; }
 
         [JsonConstructor]
         public Pokemon() { }
 
-        public Pokemon(string name, string baseExperience, List<Abilities>? abilities)
+        public Pokemon(string name, string baseExperience, List<Abilities>? abilities, DateTime dateRegistered)
         {
             Name = name;
             BaseExperience = baseExperience;
             Abilities = abilities;
+            this.dateRegistered = dateRegistered;
         }
 
         public override string ToString()
@@ -38,7 +40,7 @@ namespace Testing1.models.pokeApi
             {
                 tostring += "No abilities registered\n";
             }
-                tostring += "]\n-----";
+                tostring += "]\nDate Registered in Pokidex: " + dateRegistered.ToString("G");
             return tostring;
         }
     }
