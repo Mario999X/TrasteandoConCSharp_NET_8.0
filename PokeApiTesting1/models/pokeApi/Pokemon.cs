@@ -36,7 +36,7 @@ namespace Testing1.models.pokeApi
             }
             else
             {
-                tostring += "No tiene habilidades\n";
+                tostring += "No abilities registered\n";
             }
                 tostring += "]\n-----";
             return tostring;
