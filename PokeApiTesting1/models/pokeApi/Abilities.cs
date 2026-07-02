@@ -25,7 +25,7 @@ namespace Testing1.models.pokeApi
 
         public override string ToString()
         {
-            return $"{Ability} | Oculta: {IsHidden} | Slot: {Slot}";
+            return $"{Ability} | Hidden: {IsHidden} | Slot: {Slot}";
         }
     }
 }

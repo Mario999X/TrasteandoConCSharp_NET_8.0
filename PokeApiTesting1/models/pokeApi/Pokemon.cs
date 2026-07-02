@@ -24,7 +24,7 @@ namespace Testing1.models.pokeApi
         public override string ToString()
         {
             var tostring ="-----" + "\nPokemon: " + Name +
-                "\nExperience: " + BaseExperience +
+                "\nBase Experience: " + BaseExperience +
                 "\nAbilities: \n[\n";
 
             if (Abilities != null)
