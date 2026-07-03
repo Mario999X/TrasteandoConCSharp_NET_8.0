@@ -8,7 +8,7 @@ namespace Testing1
         
         private static async Task Main()
         {
-            //consumer.InsertDataForTesting();
+            consumer.InsertDataForTesting();
             await InitialMenu();
         }
 
@@ -26,7 +26,8 @@ namespace Testing1
                     "\n4.Delete pokemon in cache" +
                     "\n5.Reset cache" +
                     "\n6.Exit app" +
-                    "\n7.Clear terminal\n");
+                    "\n7.Clear terminal" +
+                    "\n8.Filter By First letter\n");
 
                 var readKey = Console.ReadLine() ?? "";
 
@@ -67,6 +68,14 @@ namespace Testing1
                     case 7:
                         {
                             Console.Clear();
+                        }
+                        break;
+                    case 8:
+                        {
+                            Console.WriteLine("Write the letter: ");
+                            var readKey2 = Console.ReadLine() ?? "";
+
+                            consumer.FilterByLetter(readKey2);
                         }
                         break;
                     default:

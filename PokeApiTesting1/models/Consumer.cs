@@ -96,6 +96,14 @@ namespace Testing1.models
             }
         }
 
+        public void FilterByLetter(string letter)
+        {
+            foreach (var p in pokemons.Where(x => x.Name.StartsWith(letter, StringComparison.OrdinalIgnoreCase)))
+            {
+                Console.WriteLine(p);
+            }
+        }
+
         // Data for testing
         public void InsertDataForTesting()
         {
