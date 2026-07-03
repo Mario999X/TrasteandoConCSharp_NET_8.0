@@ -64,6 +64,8 @@ namespace PokeApiTesting2
             {
                 await ShowIndividualPokemon(name);
             }
+
+            Console.WriteLine("*** --- Backup loaded");
         }
 
         public void ShowAllCachedPokemon()

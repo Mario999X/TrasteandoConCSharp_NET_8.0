@@ -30,7 +30,7 @@ namespace PokeApiTesting2
                     "\n7.Clear terminal" +
                     "\n8.Filter By First letter" +
                     "\n9.Create Backup from Cache" +
-                    "\n0.Load Backup to Cache\n");
+                    "\n10.Load Backup to Cache\n");
 
                 var readKey = Console.ReadLine() ?? "";
 
@@ -83,10 +83,11 @@ namespace PokeApiTesting2
                         break;
                     case 9:
                         {
-                            dm.CreateWriteBackupCsv(consumer.pokemons);
+                            var path = dm.CreateWriteBackupCsv(consumer.pokemons);
+                            Console.WriteLine("File created at: " + path);
                         }
                         break;
-                    case 0:
+                    case 10:
                         {
                             await consumer.LoadPokemonsFromCsv(dm.GetLatestBackupPath());
                         }

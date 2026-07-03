@@ -5,7 +5,7 @@ namespace PokeApiTesting2.utils
 {
     internal class DirectoryManager
     {
-        readonly string header = "Name"; // header;base_experience...
+        readonly string header = "Name"; // Name;Base_Experience...
 
         public string CreateWriteBackupCsv(HashSet<Pokemon> pokemons)
         {
